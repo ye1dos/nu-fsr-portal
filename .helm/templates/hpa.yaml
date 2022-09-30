@@ -1,0 +1,37 @@
+{{- if .Values.hpa.enabled -}}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "project.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "project.name" . }}
+    helm.sh/chart: {{ include "project.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "project.fullname" . }}
+  minReplicas: {{ .Values.replicaCount }}
+  maxReplicas: {{ .Values.hpa.maxReplicas }}
+  metrics:
+    {{- if .Values.hpa.cpu }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.hpa.cpu }}
+    {{- end }}
+    {{- if .Values.hpa.memory }}
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageValue: {{ .Values.hpa.memory }}
+  {{- end }}
+  {{/*    {{- if .Values.hpa.requests }}*/}}
+  {{/*    - type: Pod*/}}
+  {{/*        pods:*/}}
+  {{/*          metricName: http_requests*/}}
+  {{/*          targetAverageValue: {{ .Values.hpa.requests }}*/}}
+  {{/*  {{- end }}*/}}
+  {{- end }}

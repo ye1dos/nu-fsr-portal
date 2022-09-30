@@ -1,0 +1,115 @@
+.general-info__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.general-info__avatar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: 23px;
+  display: flex;
+  flex-direction: column;
+  width: 114px;
+  height: 151px;
+  cursor: pointer;
+  background: #f0f4fb;
+  border: 1px solid #b7d1ff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #909090;
+  align-items: center;
+  justify-content: center;
+}
+.general-info__table th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+}
+.general-info__table th {
+  padding-top: 17px;
+}
+.general-info__table td input {
+  width: 100%;
+}
+.general-info__table tr:first-child th {
+  padding-top: 0;
+}
+.general-info__table tr:nth-child(-n + 4) td input {
+  width: 60%;
+}
+.general-info__input {
+  border: 1px solid #b7d1ff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 20px;
+  height: 30px;
+}
+.general-info__input__date {
+  border: 1px solid #b7d1ff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 0 17px 0 23px;
+  height: 30px;
+}
+.general-info__input__date .react-date-picker__wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border: none;
+}
+.general-info__input__checkbox {
+  height: 16px;
+  width: 16px !important;
+}
+.general-info__input__select {
+  border: 1px solid #b7d1ff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 0 17px 0 23px;
+  height: 30px;
+}
+.general-info__input__radio {
+  height: 13px;
+  width: 13px !important;
+}
+.general-info__input__radio-label {
+  margin-left: 13px;
+  font-size: 16px;
+}
+.general-info__input__radio-container {
+  margin-left: 38px;
+}
+.general-info__input__radio-container:first-child {
+  margin-left: 0;
+}
+.avatar-modal {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  z-index: 999;
+}
+.avatar-modal > div {
+  position: relative;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  margin: auto;
+  border: 1px solid rgb(187, 187, 187);
+  padding: 5px;
+}
+/* .avatar-modal__content {
+  position: relative;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  margin: auto;
+  border: 1px solid rgb(187, 187, 187);
+  padding: 5px;
+} */

@@ -1,0 +1,76 @@
+.competition__panel {
+  width: 100%;
+  height: 262px;
+  background: #ffffff;
+  margin-top: 23px;
+  padding: 20px 22px 35px;
+  border-bottom: 1px solid #d6dade;
+}
+.competition__name {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #212121;
+}
+.competition__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.competition__left {
+  width: 845px;
+}
+
+.competition__right {
+  width: 215px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 13px;
+}
+
+.competition__desc {
+  font-size: 18px;
+  line-height: 24px;
+  color: #909090;
+  margin-top: 13px;
+}
+.competition__info {
+  margin-top: 33px;
+  width: 100%;
+}
+.competition__info th {
+  font-weight: normal;
+  text-align: left;
+}
+.competition__info div {
+  min-width: 125px;
+}
+.competition__info__header {
+  font-size: 16px;
+  line-height: 19px;
+  color: #909090;
+  white-space: nowrap;
+  margin-right: 13px;
+}
+.competition__info__value {
+  font-size: 18px;
+  line-height: 21px;
+  color: #212121;
+  margin-top: 23px;
+  margin-right: 13px;
+}
+.competition__footer {
+  display: flex;
+  margin-top: 30px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.competition__last {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #adadad;
+  margin-top: 20px;
+}

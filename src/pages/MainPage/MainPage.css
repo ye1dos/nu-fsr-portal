@@ -1,0 +1,47 @@
+.competition-types__heading {
+  margin-top: 63px;
+  margin-bottom: 23px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #212121;
+}
+.competition-type {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+}
+.competition-type__name {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #043377;
+  display: flex;
+  align-items: center;
+}
+.competition-type__info {
+  margin-top: 13px;
+  margin-bottom: 5px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #424242;
+}
+.competition-type__contacts-container {
+  margin-top: 18px;
+  margin-left: 20px;
+}
+.competition-type__contacts {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+  color: #424242;
+}
+.competition-type__attachment {
+  margin-top: 18px;
+  margin-left: 30px;
+}

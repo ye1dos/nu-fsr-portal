@@ -1,0 +1,7 @@
+.application-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 43px;
+  border-radius: 4px;
+}

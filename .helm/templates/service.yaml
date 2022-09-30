@@ -1,0 +1,31 @@
+{{- if .Values.service.enable -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "project.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "project.name" . }}
+    helm.sh/chart: {{ include "project.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+          {{- if .Values.gitlab.prometheus.enable }}
+    # === Prometheus annotations ===
+    application: {{ .Values.gitlab.labels.application }}
+    release: {{ .Values.gitlab.labels.release }}
+    # === End of Prometheus ===
+        {{- end }}
+        {{- if .Values.gitlab.prometheus.enable }}
+  annotations:
+    prometheus.io/scrape: 'true'
+        {{- end }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ .Values.service.name }}
+  selector:
+    app.kubernetes.io/name: {{ include "project.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+        {{- end }}

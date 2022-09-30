@@ -1,0 +1,231 @@
+.esp__file {
+    width: 577px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17px;
+}
+.esp__file > input {
+    max-width: 350px;
+}
+.esp__password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17px;
+}
+.esp_password__label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #212121;
+    margin-bottom: 10px;
+}
+.esp__password__input {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 6px 15px;
+    color: #212121;
+    border: 2px solid #b7d1ff;
+    border-radius: 3px;
+    width: 220px;
+}
+
+/* datamap */
+
+.datamap-table__container {
+  margin-top: 63px;
+}
+.datamap-table__tabs {
+  height: 43px;
+  display: flex;
+}
+.datamap-table__body {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.datamap-table-view {
+  width: 100%;
+}
+
+.datamap-table-view th {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #212121;
+  background: #f0f4fb;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 13px;
+}
+.datamap-table-view td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 6.5px 13px;
+  position: relative;
+  text-align: center;
+}
+
+.datamap-table {
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.datamap-table tr {
+  height: 43px;
+}
+.datamap-table th {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #212121;
+  background: #f0f4fb;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 0 15px;
+  white-space: nowrap;
+}
+.datamap-table td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 0px 13px;
+  /* white-space: nowrap; */
+  text-align: center;
+  position: relative;
+  /* overflow-y: hidden; */
+}
+
+.datamap-table td select {
+  width: 100%;
+  padding: 5px;
+}
+
+.datamap-table__program-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* stars */
+
+.stars-table__container {
+  margin-top: 63px;
+}
+.stars-table__tabs {
+  height: 43px;
+  display: flex;
+}
+.stars-table__tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #212121;
+  cursor: pointer;
+}
+.stars-table__tab:first-child {
+  width: 273px;
+}
+.stars-table__tab.active {
+  background: #f0f4fb;
+  border: 1px solid #212121;
+}
+.stars-table__body {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.stars-table-view {
+  width: 100%;
+}
+
+.stars-table-view th {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #212121;
+  background: #f0f4fb;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 13px;
+}
+.stars-table-view td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 6.5px 13px;
+  position: relative;
+  text-align: center;
+}
+
+.stars-table {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stars-count {
+  margin-top: 100px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.stars-table tr {
+  height: 43px;
+}
+.stars-table th {
+  font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #212121;
+    background: #f0f4fb;
+    border: 1px solid #b7d1ff;
+    vertical-align: middle;
+    padding: 0 15px;
+    white-space: nowrap;
+}
+.stars-table td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 0px 13px;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.stars-table td select {
+  width: 100%;
+  padding: 5px;
+}
+.datamap__info__value {
+  word-wrap: break-word;
+}

@@ -1,0 +1,6 @@
+.avatar__container {
+  display: flex;
+}
+.ReactCrop__image {
+  max-height: 400px;
+}

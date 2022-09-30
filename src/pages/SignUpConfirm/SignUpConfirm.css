@@ -1,0 +1,32 @@
+.signup-confirm__heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #209898;
+  text-align: center;
+}
+.signup-confirm__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #212121;
+  text-align: center;
+  margin-top: 23px;
+}
+
+.signup-confirm__text.first {
+  margin-top: 43px;
+}
+
+.signup-confirm__link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #1565c0;
+  text-align: center;
+  margin-top: 43px;
+}

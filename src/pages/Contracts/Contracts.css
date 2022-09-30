@@ -1,0 +1,39 @@
+.contracts__container {
+  display: flex;
+}
+.contracts-table {
+  width: 100%;
+  border: 1px solid #b7d1ff;
+}
+.contracts-table tr {
+  height: 50px;
+  border: 1px solid #b7d1ff;
+}
+.contracts-table tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+.contracts-table tbody tr:nth-child(even) {
+  background: rgba(233, 112, 54, 0.07);
+}
+.contracts-table thead tr {
+  background: rgba(39, 101, 202, 0.07);
+}
+.contracts-table th,
+.contracts-table td {
+  padding: 0 13px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+  vertical-align: middle;
+  text-align: left;
+  white-space: nowrap;
+}
+.contracts-table th {
+  font-weight: 500;
+}
+.contracts-table td a {
+  text-decoration: none;
+  color: #212121;
+}

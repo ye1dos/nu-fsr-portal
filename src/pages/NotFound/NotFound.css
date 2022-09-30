@@ -1,0 +1,56 @@
+.nf__wrapper {
+  display: flex;
+  padding-top: 70px;
+  justify-content: space-between;
+}
+.nf__container {
+  max-width: 490px;
+}
+.nf__image {
+  width: 342px;
+  height: 414px;
+}
+.nf__oops {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 112px;
+  color: #212121;
+}
+.nf__descriptions {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 33px;
+  line-height: 39px;
+  color: #212121;
+  margin-top: 33px;
+}
+.nf__code {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #212121;
+  margin-top: 33px;
+}
+.nf__links-heading {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #212121;
+  margin-top: 33px;
+}
+.nf__links {
+  display: flex;
+  flex-direction: column;
+}
+.nf__link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #209898;
+  margin-top: 13px;
+  text-decoration: none;
+}

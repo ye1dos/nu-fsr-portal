@@ -1,0 +1,31 @@
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 208px);
+}
+@media (min-width: 576px) {
+  .page-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-container {
+    max-width: 1101px;
+    width: 90%;
+    padding: 83px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-container {
+    max-width: 1101px;
+    width: 100%;
+  }
+}

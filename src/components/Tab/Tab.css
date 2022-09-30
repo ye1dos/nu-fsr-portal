@@ -1,0 +1,26 @@
+.tab {
+  width: 174px;
+  border: 1px solid #209898;
+  border-radius: 3px;
+  padding: 16px 0;
+  font-size: 18px;
+  line-height: 21px;
+  color: #212121;
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 23px;
+}
+.tab.active {
+  border: 1px solid transparent;
+  /* background-color: #fdf5f1; */
+  background-color: #209898;
+  color: #ffffff;
+}
+.tab__container {
+  display: flex;
+  margin-top: 23px;
+}
+.tab:first-child {
+  margin-left: 0;
+}

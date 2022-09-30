@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("../fonts/Roboto.woff2") format("woff2"),
+    url("../fonts/Roboto.woff") format("woff"),
+    url("../fonts/Roboto.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../fonts/Georgia.woff") format("woff"),
+    url("../fonts/Georgia.ttf") format("truetype");
+}

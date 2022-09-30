@@ -1,0 +1,149 @@
+.personal-table__container {
+  margin-top: 60px;
+}
+.personal-table__tabs {
+  height: 43px;
+  display: flex;
+  justify-content: space-between;
+}
+.personal-table__tab {
+  width: 274px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+  cursor: pointer;
+}
+.personal-table__tab.active {
+  background: #f0f4fb;
+  border: 1px solid #212121;
+}
+.personal-table__body {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.personal-table {
+  width: 100%;
+}
+.personal-table tr {
+  height: 43px;
+}
+.personal-table th {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+  background: #f0f4fb;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 0 30px;
+  white-space: nowrap;
+}
+.personal-table td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 0px 13px;
+  white-space: nowrap;
+  text-align: center;
+}
+.personal-table td select {
+  width: 100%;
+  padding: 5px;
+}
+
+.edit-actions {
+  display: flex;
+  align-items: center;
+}
+.edit-actions img:first-child {
+  margin-right: 10px;
+}
+
+.add-row__container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 23px;
+}
+.add-row {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  border: 1px solid #209898;
+  border-radius: 3px;
+  background: #ffffff;
+  width: 137px;
+  height: 37px;
+}
+.personal-form__footer {
+  display: flex;
+  margin-top: 33px;
+}
+.personal-form__save {
+  width: 250px;
+  height: 42px;
+  background: #e97036;
+  border-radius: 3px;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.personal-form__submit {
+  width: 250px;
+  height: 42px;
+  background: #3770d4;
+  border-radius: 3px;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 33px;
+}
+
+.personal-table__input {
+  border: 1px solid #b7d1ff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 20px;
+  height: 30px;
+}
+.personal-table__select {
+  border: 1px solid #b7d1ff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 20px;
+  height: 30px;
+}
+.confirm-row__button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+  border-radius: 3px;
+  background: #209898;
+  height: 30px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin-left: 13px;
+}
+.confirm-row__button span {
+  margin-right: 3px;
+}

@@ -1,0 +1,21 @@
+.breadcrumps__container {
+  display: flex;
+  margin-top: 33px;
+  align-items: center;
+}
+
+.breadcrumps__arrow {
+  margin: 0 10px;
+}
+.breadcrumps__item {
+  display: flex;
+}
+.breadcrumps__link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #209898;
+  text-decoration: none;
+}

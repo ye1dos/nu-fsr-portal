@@ -1,0 +1,153 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "project.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "project.name" . }}
+    helm.sh/chart: {{ include "project.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+        {{- if .Values.gitlab.enabled }}
+  annotations:
+    app.gitlab.com/env: {{ .Values.gitlab.annotations.env }}
+    app.gitlab.com/app: {{ .Values.gitlab.annotations.app }}
+        {{- end }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "project.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "project.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+            {{- if .Values.gitlab.enabled }}
+      annotations:
+        app.gitlab.com/env: {{ .Values.gitlab.annotations.env }}
+        app.gitlab.com/app: {{ .Values.gitlab.annotations.app }}
+          {{- end }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+                  {{- range $key, $val := .Values.env }}
+            - name: {{ $key | quote }}
+              value: {{ $val | quote }}
+                {{- end }}
+          ports:
+            - name: {{ .Values.service.name }}
+              containerPort: {{ .Values.service.port }}
+              protocol: {{ .Values.service.protocol }}
+                {{ if .Values.healthcheck.readinessProbe.enable }}
+          readinessProbe:
+                  {{- with .Values.healthcheck.readinessProbe.exec }}
+            exec:
+                  {{- toYaml . | nindent 14 }}
+                  {{- end }}
+                  {{ if .Values.healthcheck.readinessProbe.httpGet -}}
+            httpGet:
+              path: {{ .Values.healthcheck.readinessProbe.httpGet.path }}
+              port: {{ .Values.service.port }}
+              scheme: {{ .Values.healthcheck.readinessProbe.httpGet.scheme }}
+                    {{ if .Values.healthcheck.readinessProbe.httpGet.hashttpauth }}
+              httpHeaders:
+                - name: Authorization
+                  value: {{ .Values.healthcheck.readinessProbe.httpGet.value }}
+                  {{ end }}
+                  {{ end }}
+            initialDelaySeconds: {{ .Values.healthcheck.readinessProbe.initialDelaySeconds }}
+            failureThreshold: {{ .Values.healthcheck.readinessProbe.failureThreshold }}
+            periodSeconds: {{ .Values.healthcheck.readinessProbe.periodSeconds }}
+            successThreshold: {{ .Values.healthcheck.readinessProbe.successThreshold }}
+            timeoutSeconds: {{ .Values.healthcheck.readinessProbe.timeoutSeconds }}
+                {{ end }}
+                {{ if .Values.healthcheck.livenessProbe.enable }}
+          livenessProbe:
+                  {{- with .Values.healthcheck.livenessProbe.exec }}
+            exec:
+                  {{- toYaml . | nindent 14 }}
+                  {{- end }}
+                  {{ if .Values.healthcheck.livenessProbe.httpGet -}}
+            httpGet:
+              path: {{ .Values.healthcheck.livenessProbe.httpGet.path }}
+              port: {{ .Values.service.port }}
+              scheme: {{ .Values.healthcheck.livenessProbe.httpGet.scheme }}
+                    {{ if .Values.healthcheck.livenessProbe.httpGet.hashttpauth }}
+              httpHeaders:
+                - name: Authorization
+                  value: {{ .Values.healthcheck.livenessProbe.httpGet.value }}
+                  {{ end }}
+                  {{ end }}
+            initialDelaySeconds: {{ .Values.healthcheck.livenessProbe.initialDelaySeconds }}
+            failureThreshold: {{ .Values.healthcheck.livenessProbe.failureThreshold }}
+            periodSeconds: {{ .Values.healthcheck.livenessProbe.periodSeconds }}
+            successThreshold: {{ .Values.healthcheck.livenessProbe.successThreshold }}
+            timeoutSeconds: {{ .Values.healthcheck.livenessProbe.timeoutSeconds }}
+                {{ end }}
+          resources:
+                {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+                  {{- $releaseName  := include "project.name" . -}}
+                  {{- $releaseFullName  := include "project.fullname" . -}}
+                  {{- if .Values.persistent }}
+                  {{- range $key, $val := .Values.persistent }}
+            - name: {{ $key }}
+              mountPath: {{ $val.mountPath.path }}
+                  {{- end }}
+                  {{- end }}
+                  {{- if .Values.nfs }}
+                  {{- range $key, $val := .Values.nfs }}
+            - name: {{ $key }}
+              mountPath: {{ $val.mountPath.path }}
+                  {{- end }}
+                  {{- end }}
+                  {{- if .Values.configMap }}
+                  {{- range $key, $val := .Values.configMap }}
+            - name: {{ $key }}
+              mountPath: {{ $val.mountPath.path }}
+              subPath: {{ $val.fileName.name }}
+              readOnly: {{ $val.readOnly }}
+                {{- end }}
+            {{- end }}
+      volumes:
+              {{- if .Values.persistent }}
+              {{- range $key, $val := .Values.persistent }}
+        - name: {{ $key }}
+          persistentVolumeClaim:
+            claimName: {{ $releaseName }}-{{ $key }}-pvc
+              {{- end }}
+              {{- end }}
+              {{- if .Values.nfs }}
+              {{- range $key, $val := .Values.nfs }}
+        - name: {{ $key }}
+          nfs:
+            server: {{ $val.server }}
+            path: {{ $val.serverPath.path }}
+              {{- end }}
+              {{- end }}
+              {{- if .Values.configMap }}
+              {{- range $key, $val := .Values.configMap }}
+        - name: {{ $key }}
+          configMap:
+            name: {{ $releaseFullName }}-{{ $key }}
+            defaultMode: {{ $val.permission }}
+            {{- end }}
+            {{- end }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+            {{- with .Values.nodeSelector }}
+      nodeSelector:
+            {{- toYaml . | nindent 8 }}
+            {{- end }}
+            {{- with .Values.affinity }}
+      affinity:
+            {{- toYaml . | nindent 8 }}
+            {{- end }}
+            {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+        {{- end }}

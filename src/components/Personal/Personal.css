@@ -1,0 +1,16 @@
+.personal-info__container {
+  background: #fbfbfb;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 37px;
+}
+
+.personal-info__item {
+  display: flex;
+  justify-content: space-between;
+  min-width: 320px;
+  margin-bottom: 10px;
+}

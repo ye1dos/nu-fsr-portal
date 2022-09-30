@@ -1,0 +1,171 @@
+html {
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+html::-webkit-scrollbar {
+  /*display: none;*/
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+html {
+  -ms-overflow-style: none;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 123px;
+}
+.flex {
+  display: flex;
+}
+.space-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.m-l-10 {
+  margin-left: 10px;
+}
+.m-t-20 {
+  margin-top: 20px;
+}
+.m-b-20 {
+  margin-bottom: 20px;
+}
+.m-x-10 {
+  margin: 0 10px;
+}
+.w-70 {
+  width: 70%;
+}
+.deny-button {
+  border: none;
+  background: none;
+  color: #0347c2;
+  font-weight: bold;
+}
+.apply-button {
+  background: #3770d4;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  width: 215px;
+  padding: 12px 0;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+}
+.apply-button:disabled {
+  opacity: 0.5;
+}
+.results-button {
+  background: #ed7d31;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  width: 215px;
+  padding: 12px 0;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+}
+.cancel-button {
+  background: #ffffff;
+  border-radius: 4px;
+  color: #212121;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 11px 17px;
+  border: 1px solid #e97036;
+  text-decoration: none;
+}
+.page-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #212121;
+  margin-top: 43px;
+}
+.breakline {
+  width: 97%;
+  border-bottom: 1px solid #d6dade;
+  margin: 23px auto 0;
+}
+.modal {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  padding: 33px 23px;
+  max-width: 624px;
+}
+.modal__header {
+  width: 100%;
+  font-size: 25px;
+}
+.modal__header h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.modal__content {
+  width: 100%;
+  margin-top: 23px;
+  ont-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #909090;
+}
+.modal__actions {
+  display: flex;
+  margin-top: 53px;
+}
+.modal__actions button:first-child {
+  margin-right: 23px;
+}
+.popup-content {
+  width: auto !important;
+  padding: 0 !important;
+}
+
+.file-input__container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.file-upload {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /*-webkit-appearance: none;*/
+  /*margin: 0;*/
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.mandatory {
+  color: #ff0000;
+}

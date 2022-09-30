@@ -1,0 +1,32 @@
+{{- if .Values.service.nodePort.enable -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "project.fullname" . }}-nodeport
+  labels:
+    app.kubernetes.io/name: {{ include "project.name" . }}
+    helm.sh/chart: {{ include "project.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+          {{- if .Values.gitlab.prometheus.enable }}
+    # === Prometheus annotations ===
+    application: {{ .Values.gitlab.labels.application }}
+    release: {{ .Values.gitlab.labels.release }}
+    # === End of Prometheus ===
+        {{- end }}
+        {{- if .Values.gitlab.prometheus.enable }}
+  annotations:
+    prometheus.io/scrape: 'true'
+        {{- end }}
+spec:
+  type: NodePort
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ .Values.service.name }}
+      nodePort: {{ .Values.service.nodePort.port }}
+  selector:
+    app.kubernetes.io/name: {{ include "project.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+        {{- end }}

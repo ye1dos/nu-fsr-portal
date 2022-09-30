@@ -1,0 +1,21 @@
+.doc__container {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 13px;
+  width: 50%;
+}
+.doc__icon {
+  margin-right: 10px;
+}
+.doc__item {
+  display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #0054a6;
+  text-decoration: none;
+  word-break: break-all;
+}

@@ -1,0 +1,432 @@
+.application-form__heading {
+  margin-top: 43px;
+}
+.application-form__heading h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #212121;
+}
+.application-form__disclaimer {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #909090;
+  margin-top: 23px;
+}
+.application-form__disclaimer span {
+  color: #ff0000;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.cabinet-link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration-line: underline;
+  color: #3770d4;
+  margin-top: 13px;
+}
+.application-form__documents {
+  display: flex;
+  flex-direction: column;
+  margin-top: 43px;
+}
+.application-form__headings {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  background: #f0f4fb;
+  border: 1px solid #b7d1ff;
+  padding: 0 80px 0 10px;
+}
+.application-form__document {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  border: 1px solid #b7d1ff;
+  border-top: none;
+  padding: 13px;
+}
+.process_application-form__footer {
+  display: flex;
+  margin-top: 33px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.application-form__save {
+  width: 250px;
+  height: 42px;
+  background: #e97036;
+  border-radius: 3px;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.application-form__save:disabled {
+  opacity: 0.5;
+}
+.application-form__submit {
+  width: 250px;
+  height: 42px;
+  background: #3770d4;
+  border-radius: 3px;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-top: 43px;
+}
+.application-form__submit:disabled {
+  opacity: 0.5;
+}
+.application-table__container {
+  margin-top: 40px;
+}
+.application-table__tabs {
+  height: 43px;
+  display: flex;
+}
+.application-table__tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #212121;
+  cursor: pointer;
+}
+.application-table__tab:first-child {
+  width: 273px;
+}
+.application-table__tab.active {
+  background: #f0f4fb;
+  border: 1px solid #212121;
+}
+.application-table-view {
+  width: 100%;
+}
+
+.application-table-view th {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #212121;
+  background: #f0f4fb;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 13px;
+}
+.application-table-view td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 6.5px 13px;
+  position: relative;
+  text-align: center;
+}
+
+.application-table {
+  width: 100%;
+  position: relative;
+
+}
+.application-table tr {
+  height: 43px;
+}
+.application-table td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 0px 13px;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+}
+/* fn table */
+.fn_table {
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+.fn_input {
+  border: none;
+  width: 100%;
+  margin-right: 13px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212121;
+  border-radius: 3px;
+  text-align: center;
+}
+.fn_table tr {
+  height: 43px;
+}
+.fn_table td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #212121;
+  background: #ffffff;
+  border: 1px solid #b7d1ff;
+  vertical-align: middle;
+  padding: 0px 13px;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+}
+.fn_table-title {
+  font-weight: normal;
+  text-align: left;
+  padding-top: 17px;
+  padding-left: 35px;
+}
+/* */
+.application-table td select {
+  width: 100%;
+  padding: 5px;
+}
+
+.application-table__program-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.expense-plan__label {
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+  min-height: 40px;
+  text-align: center;
+}
+.add-expense__container {
+  /*display: flex;*/
+  /*justify-content: flex-start;*/
+  /*margin-top: 23px;*/
+}
+.add-expense {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  border: 1px solid #209898;
+  border-radius: 3px;
+  background: #ffffff;
+  height: 37px;
+  width: 137px;
+  text-align: center;
+}
+.expense-delete {
+  right: -18px;
+  top: 15px;
+  position: absolute;
+  cursor: pointer;
+}
+.inputfile__container {
+  display: flex;
+  align-items: center;
+}
+.inputfile__container label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  /* color: #ffffff; */
+  color: #212121;
+  height: 37px;
+  min-width: 137px;
+  border: 1px solid #209898;
+  border-radius: 3px;
+  background: #ffffff;
+}
+
+.inputfile__container input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+.inputfile__container p {
+  margin-right: 10px;
+  color: #3770d4;
+}
+.confirm-button {
+  background: #3770d4;
+  border-radius: 3px;
+  font-weight: 500;
+  min-width: 170px;
+  height: 42px;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+.confirm-button_reverse {
+  background: #ffffff;
+  border-radius: 3px;
+  font-weight: 500;
+  min-width: 170px;
+  height: 42px;
+  color: #3770d4;
+  border: 1px solid #3770d4;
+  outline: none;
+}
+.cancel-button {
+  background: #f0f4fb;
+  border-radius: 3px;
+  font-weight: 500;
+  min-width: 193px;
+  height: 42px;
+  color: #212121;
+  border: none;
+  outline: none;
+}
+
+.talap-form {
+  margin-top: 33px;
+  width: 100%;
+}
+.talap-form th {
+  font-weight: normal;
+  text-align: left;
+  padding-top: 17px;
+  padding-right: 23px;
+}
+.talap-form tr:first-child th {
+  padding-top: 0;
+}
+
+.talap-form td input {
+  width: 100%;
+}
+
+.scp-form {
+  margin-top: 43px;
+}
+.scp-form th {
+  font-weight: normal;
+  text-align: left;
+  padding-top: 17px;
+  padding-right: 23px;
+}
+.scp-form tr:first-child th {
+  padding-top: 0;
+}
+
+.scp-form td input {
+  width: 100%;
+}
+.table__text {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  max-height: 300px;
+  margin-right: 13px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212121;
+  margin-bottom: 30px;
+  padding: 9px;
+  border: 1px solid #b7d1ff;
+  border-radius: 3px;
+  resize: vertical;
+  overflow: hidden;
+}
+.messages__text {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-right: 13px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212121;
+  margin-bottom: 30px;
+  padding: 9px;
+  border: 1px solid #b7d1ff;
+  border-radius: 3px;
+  resize: none;
+  overflow: hidden;
+}
+.financialModel_input {
+  border: none;
+  width: 100%;
+  margin-right: 13px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212121;
+  margin-bottom: 30px;
+  padding: 9px;
+  border-radius: 3px;
+}
+.messages__text::placeholder {
+  text-align: left;
+  color: #909090;
+}
+.empty_th {
+  border: none !important;
+  visibility: hidden;
+}
+.empty_td {
+  border: none !important;
+  margin: 20px 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+.delete_table_row {
+  cursor: pointer;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.vertical_table_th {
+  width: 100px;
+}
+/* financial model */
+.vertical_table_th_fn {
+  white-space: pre !important;
+}
+.application-table2 {
+  width: 100%;
+  position: relative;
+}
+.white-space-normal {
+  white-space: normal;
+}

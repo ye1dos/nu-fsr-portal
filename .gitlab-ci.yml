@@ -1,0 +1,96 @@
+#front auto build CI
+
+stages:
+  - build
+  - deploy
+
+### Develop stages
+build-dev:
+  image: docker:stable
+  stage: build
+  tags:
+    - docker
+    - test
+  services:
+    - name: docker:dind
+      alias: thedockerhost
+      command: ["dockerd-entrypoint.sh", "--insecure-registry=gitlabfsr.corp.almanit.kz:4567"]
+  variables:
+    DOCKER_HOST: tcp://thedockerhost:2375
+#    DOCKER_HOST: tcp://localhost:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  before_script:
+    - export
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    #- docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "https://gitlabfsr.corp.almanit.kz:4567/v2/"
+  script:
+    - echo "Building!"
+    - docker build --pull --build-arg REVISION=$CI_COMMIT_SHA --build-arg ENV=test --cache-from $CI_REGISTRY_IMAGE -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest-dev
+    - docker push $CI_REGISTRY_IMAGE:latest-dev
+    - echo "Build stage end."
+  only:
+    - develop
+
+deploy-dev:
+  stage: deploy
+  tags:
+    - dockerssh
+    - test
+  when: manual
+  variables:
+    GIT_STRATEGY: clone
+  only:
+    - develop
+  script:
+    - echo "deploy Stage start"
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker-compose pull frontend
+    - docker-compose up -d frontend
+    - echo "deploy Stage end"
+
+### Prod stages
+build-prod:
+  image: docker:stable
+  stage: build
+  tags:
+    - docker
+    - prod
+  services:
+    - name: docker:dind
+      alias: thedockerhost
+      command: ["dockerd-entrypoint.sh", "--insecure-registry=gitlabfsr.corp.almanit.kz:4567"]
+  variables:
+    DOCKER_HOST: tcp://thedockerhost:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - echo "Building!"
+    - docker build --pull --build-arg REVISION=$CI_COMMIT_SHA --build-arg ENV=production --cache-from $CI_REGISTRY_IMAGE -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:latest
+    - echo "Build stage end."
+  only:
+    - master
+
+deploy-prod:
+  stage: deploy
+  tags:
+    - dockerssh
+    - prod
+  when: manual
+  variables:
+    GIT_STRATEGY: clone
+  only:
+    - master
+  script:
+    - echo "deploy Stage start"
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker-compose pull frontend
+    - docker-compose up -d frontend
+    - echo "deploy Stage end"

@@ -1,0 +1,16 @@
+.expense__container {
+  display: flex;
+  flex-direction: column;
+}
+.expense__item {
+  display: flex;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  background-color: rgba(196, 196, 196, 0.18);
+}
+.expense__item_k {
+  width: 50%;
+}
+.expense__item_v {
+  width: 50%;
+}

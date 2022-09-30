@@ -1,0 +1,12 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Portal-Front Helm chart for Kubernetes.
+home: https://sandbox.almanit.kz/fsr/
+maintainers:
+- email: avassin@almanit.kz
+  name: Andrey Vassin
+name: fsr-front-ui
+sources:
+- https://gitlab.almanit.kz/portal-fsr/fsr-front-ui
+version: 1.0.0
+
